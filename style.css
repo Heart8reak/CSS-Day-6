@@ -1,0 +1,131 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #060606;
+}
+
+.loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% -50%);
+    width: 200px;
+    height: 200px;
+    box-sizing: border-box;
+}
+
+.loader .face {
+    position: absolute;
+    border: 2px solid #121212;
+}
+
+
+.loader .face.face1 {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backface-visibility: #090909;
+    box-shadow: 0 0 10px rgba(0,0,0,1);
+    border-radius: 50%;
+    border-left: 2px solid #ff00ff;
+    border-top: 2px solid #ff00ff;
+    animation: animate 3s linear infinite;
+}
+
+.loader .face.face2 {
+    top: 25px;
+    left: 25px;
+    right: 25px;
+    bottom: 25px;
+    backface-visibility: #090909;
+    box-shadow: 0 0 10px rgba(0,0,0,1);
+    border-radius: 50%;
+    border-right: 2px solid #ffff00;
+    border-bottom: 2px solid #ffff00;
+    animation: animate 3s linear reverse infinite;
+}
+
+.loader .face.face3 {
+    top: 50px;
+    left: 50px;
+    right: 50px;
+    bottom: 50px;
+    backface-visibility: #090909;
+    box-shadow: 0 0 10px rgba(0,0,0,1);
+    border-radius: 50%;
+    border-left: 2px solid #00ff55;
+    border-top: 2px solid #00ff55;
+    animation: animate 3s linear infinite;
+}
+
+.loader .face .circle {
+    position: absolute;
+    top: calc(50% - 1px);
+    left: 50%;
+    width: 50%;
+    height: 2px;
+    transform-origin: left;
+}
+
+.loader .face.face1 .circle {
+    transform: rotate(-45deg);
+}
+
+.loader .face.face2 .circle {
+    transform: rotate(-45deg);
+}
+
+.loader .face.face3 .circle {
+    transform: rotate(-45deg);
+}
+
+.loader .face .circle:before {
+    content:'';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #fff;
+    top: -4px;
+    right: -6px;
+}
+
+.loader .face.face1 .circle:before {
+    background: #ff00ff;
+    box-shadow: 0 0 20px #ff00ff,
+                0 0 40px #ff00ff,
+                0 0 60px #ff00ff,
+                0 0 80px #ff00ff,
+                0 0 100px #ff00ff,
+                0 0 0 5px rgba(255,255,0,.1);
+}
+
+.loader .face.face2 .circle:before {
+    background: #ffff00;
+    box-shadow: 0 0 20px #ffff00,
+        0 0 40px #ffff00,
+        0 0 60px #ffff00,
+        0 0 80px #ffff00,
+        0 0 100px #ffff00,
+        0 0 0 5px rgba(255,255,0,.1);
+}
+
+.loader .face.face3 .circle:before {
+    background: #00ff55;
+    box-shadow: 0 0 20px #00ff55,
+        0 0 40px #00ff55,
+        0 0 60px #00ff55,
+        0 0 80px #00ff55,
+        0 0 100px #00ff55,
+        0 0 0 5px rgba(255,255,0,.1);
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
